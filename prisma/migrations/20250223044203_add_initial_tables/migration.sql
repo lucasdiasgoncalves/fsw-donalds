@@ -13,7 +13,7 @@ CREATE TABLE "Restaurant" (
     "avatarImageUrl" TEXT NOT NULL,
     "coverImageUrl" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Restaurant_pkey" PRIMARY KEY ("id")
 );
@@ -24,7 +24,7 @@ CREATE TABLE "MenuCategory" (
     "name" TEXT NOT NULL,
     "restaurantId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "MenuCategory_pkey" PRIMARY KEY ("id")
 );
@@ -40,7 +40,7 @@ CREATE TABLE "Product" (
     "restaurantId" TEXT NOT NULL,
     "menuCategoryId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
@@ -50,10 +50,10 @@ CREATE TABLE "Order" (
     "id" SERIAL NOT NULL,
     "total" DOUBLE PRECISION NOT NULL,
     "status" "OrderStatus" NOT NULL,
-    "consumptionMethod" "ConsumptionMethod" NOT NULL,
     "restaurantId" TEXT NOT NULL,
+    "consumptionMethod" "ConsumptionMethod" NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Order_pkey" PRIMARY KEY ("id")
 );
@@ -66,7 +66,7 @@ CREATE TABLE "OrderProduct" (
     "quantity" INTEGER NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "OrderProduct_pkey" PRIMARY KEY ("id")
 );
